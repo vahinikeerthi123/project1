@@ -3,13 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Body Scan Animation</title>
+  <title>Body Scan</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="scanner-container">
-    <div class="human-body"></div>
-    <div class="scanner"></div>
+  <div class="container">
+    <h1>Interactive Body Scan</h1>
+    <div class="body-scan">
+      <img src="human-body.png" alt="Human Body" usemap="#bodymap">
+      <map name="bodymap">
+        <area shape="rect" coords="90,50,140,120" alt="Head" onclick="showInfo('Head')">
+        <area shape="rect" coords="80,130,150,200" alt="Chest" onclick="showInfo('Chest')">
+        <area shape="rect" coords="90,210,140,300" alt="Abdomen" onclick="showInfo('Abdomen')">
+        <area shape="rect" coords="70,310,110,400" alt="Left Leg" onclick="showInfo('Left Leg')">
+        <area shape="rect" coords="120,310,160,400" alt="Right Leg" onclick="showInfo('Right Leg')">
+      </map>
+    </div>
+    <div id="info-box" class="info-box">
+      <p>Click on a body part to learn more!</p>
+    </div>
   </div>
   <script src="script.js"></script>
 </body>
